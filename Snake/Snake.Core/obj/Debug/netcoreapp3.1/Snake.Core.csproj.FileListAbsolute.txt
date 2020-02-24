@@ -1,0 +1,8 @@
+C:\Users\dansc\Documents\Code\CodeSamples\Snake\Snake.Core\obj\Debug\netcoreapp3.1\Snake.Core.csprojAssemblyReference.cache
+C:\Users\dansc\Documents\Code\CodeSamples\Snake\Snake.Core\obj\Debug\netcoreapp3.1\Snake.Core.AssemblyInfoInputs.cache
+C:\Users\dansc\Documents\Code\CodeSamples\Snake\Snake.Core\obj\Debug\netcoreapp3.1\Snake.Core.AssemblyInfo.cs
+C:\Users\dansc\Documents\Code\CodeSamples\Snake\Snake.Core\bin\Debug\netcoreapp3.1\Snake.Core.deps.json
+C:\Users\dansc\Documents\Code\CodeSamples\Snake\Snake.Core\bin\Debug\netcoreapp3.1\Snake.Core.dll
+C:\Users\dansc\Documents\Code\CodeSamples\Snake\Snake.Core\bin\Debug\netcoreapp3.1\Snake.Core.pdb
+C:\Users\dansc\Documents\Code\CodeSamples\Snake\Snake.Core\obj\Debug\netcoreapp3.1\Snake.Core.dll
+C:\Users\dansc\Documents\Code\CodeSamples\Snake\Snake.Core\obj\Debug\netcoreapp3.1\Snake.Core.pdb
