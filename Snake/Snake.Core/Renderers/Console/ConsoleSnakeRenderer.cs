@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Linq;
 
 namespace Snake.Core.Renderers.Console
 {
@@ -10,14 +8,12 @@ namespace Snake.Core.Renderers.Console
         {
             foreach(var part in snake.BodyParts)
             {
-                if (part == snake.Tail)
+                if (part == snake.BodyParts.Last())
                 {
                     System.Console.SetCursorPosition(part.PreviousLocation.X, part.PreviousLocation.Y);
                     System.Console.Write(" ");
                 }
-
                 System.Console.SetCursorPosition(part.Location.X, part.Location.Y);
-
                 if (part == snake.Head)
                 {
                     System.Console.Write("O");
@@ -33,6 +29,13 @@ namespace Snake.Core.Renderers.Console
         {
             System.Console.SetCursorPosition(food.Location.X, food.Location.Y);
             System.Console.Write("Ó");
+        }
+
+        public void GameOver(int score)
+        {
+            System.Console.Clear();
+            System.Console.SetCursorPosition(20, 10);
+            System.Console.Write($"Game Over. Your score was: {score}");
         }
     }
 }

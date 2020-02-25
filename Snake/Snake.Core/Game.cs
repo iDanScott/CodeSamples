@@ -20,12 +20,13 @@ namespace Snake.Core
         private Timer _gameTime;
         private long _gameTicks = 0;
         private Food _food;
+        private int _score = 0;
 
         public Game(ISnakeRenderer snakeRenderer, ISnake snake)
         {
             _snakeRenderer = snakeRenderer;
             _snake = snake;
-            _food = new Food(new Location(new Random().Next(0, 80), new Random().Next(0, 25)));
+            _food = new Food(new Location(new Random().Next(1, 79), new Random().Next(1, 24)));
         }
 
         public virtual void OnDirectionChanged(DirectionChangedEventArgs e)
@@ -50,8 +51,9 @@ namespace Snake.Core
                     _snake.Move();
                     if (_snake.Head.Location.X == _food.Location.X && _snake.Head.Location.Y == _food.Location.Y)
                     {
-                        _food.ChangeLocation(new Location(new Random().Next(0, 80), new Random().Next(0, 25)));
+                        _food.ChangeLocation(new Location(new Random().Next(1, 79), new Random().Next(1, 24)));
                         _snake.Grow();
+                        _score++;
                     }
                     _snakeRenderer.DrawSnake(_snake);
                     _snakeRenderer.DrawFood(_food);
@@ -59,7 +61,8 @@ namespace Snake.Core
             }
             else
             {
-
+                _snakeRenderer.GameOver(_score);
+                _gameTime.Stop();
             }
         }
     }

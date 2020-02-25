@@ -8,5 +8,6 @@ namespace Snake.Core.Renderers
     {
         void DrawSnake(ISnake snake);
         void DrawFood(Food food);
+        void GameOver(int score);
     }
 }

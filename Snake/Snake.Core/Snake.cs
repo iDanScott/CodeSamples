@@ -28,7 +28,8 @@ namespace Snake.Core
 
         public void Grow()
         {
-            BodyParts.Insert(BodyParts.IndexOf(Tail) - 1, new BodyPart(Tail.Location));
+            BodyParts.Insert(BodyParts.IndexOf(Tail), new BodyPart(Tail.Location));
+
         }
 
         public void Move()
@@ -48,6 +49,22 @@ namespace Snake.Core
             else if (_facing == Direction.Up)
             {
                 Head.ChangeLocation(new Location(Head.Location.X, Head.Location.Y - 1));
+            }
+            if (Head.Location.X < 1)
+            {
+                Head.ChangeLocation(new Location(79, Head.Location.Y));
+            }
+            if (Head.Location.X > 79)
+            {
+                Head.ChangeLocation(new Location(1, Head.Location.Y));
+            }
+            if (Head.Location.Y < 1)
+            {
+                Head.ChangeLocation(new Location(Head.Location.X, 24));
+            }
+            if (Head.Location.Y > 24)
+            {
+                Head.ChangeLocation(new Location(Head.Location.X, 1));
             }
 
             if (_turnQueue.Count() > 0)
@@ -69,7 +86,7 @@ namespace Snake.Core
             if (checkDirection == Direction.Up && direction == Direction.Down || checkDirection == Direction.Down && direction == Direction.Up ||
                 checkDirection == Direction.Left && direction == Direction.Right || checkDirection == Direction.Right && direction == Direction.Left)
             {
-                throw new ArgumentException("You cannot have a snake that goes back on itself.", nameof(direction));
+                return;
             }
 
             _turnQueue.Add(direction);
